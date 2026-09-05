@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders | Fresh Vegetables</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { primary: '#0f5238', 'primary-container': '#2d6a4f', surface: '#f8f9fa', 'on-surface-variant': '#404943' }, fontFamily: { body: ['Be Vietnam Pro'], heading: ['Plus Jakarta Sans'] } } } };
+    </script>
+    <style>.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; } body { background: #f8f9fa; } .order-shadow { box-shadow: 0 14px 35px rgba(45, 106, 79, .09); }</style>
+</head>
+<body class="text-[#191c1d] font-body">
+    <header class="sticky top-0 z-10 bg-white border-b border-[#e1e3e4]"><nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"><a href="Home.html" class="font-heading text-2xl font-bold text-primary">Fresh Vegetables</a><div class="flex items-center gap-5"><a href="Products.html" class="text-primary font-semibold">Products</a><a href="green.html" class="text-primary font-semibold">Green</a><a href="Cart.html" class="inline-flex items-center gap-1 text-primary font-semibold"><span class="material-symbols-outlined">shopping_cart</span>Cart</a></div></nav></header>
+    <main class="max-w-5xl mx-auto px-6 py-10"><div class="mb-8"><p class="text-primary font-semibold uppercase tracking-[.16em] text-xs">Account</p><h1 class="font-heading text-4xl font-bold mt-2">My orders</h1><p class="text-on-surface-variant mt-2">Track your vegetables and see the expected delivery day.</p></div><div id="ordersList" class="space-y-5"></div><div id="emptyState" class="hidden bg-white rounded-xl p-10 text-center order-shadow"><span class="material-symbols-outlined text-5xl text-primary">local_shipping</span><h2 class="font-heading text-2xl font-bold mt-4">No orders yet</h2><p class="text-on-surface-variant mt-2">Your confirmed orders will appear here.</p><a href="Products.html" class="inline-block mt-6 bg-primary text-white px-5 py-3 rounded-lg font-semibold">Browse vegetables</a></div></main>
+    <script>
+        const orders = JSON.parse(localStorage.getItem('freshVegetableOrders') || '[]');
+        const formatDate = date => new Date(date).toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+        const escapeHtml = value => String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+        const list = document.getElementById('ordersList');
+        if (!orders.length) document.getElementById('emptyState').classList.remove('hidden');
+        list.innerHTML = orders.map(order => `<article class="bg-white rounded-xl p-6 order-shadow border border-[#e1e3e4]"><div class="flex flex-col md:flex-row md:items-start justify-between gap-4 border-b border-[#e7e8e9] pb-4"><div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary">check_circle</span><h2 class="font-heading text-xl font-bold">Order ${escapeHtml(order.id)}</h2></div><p class="text-sm text-on-surface-variant mt-2">Placed on ${formatDate(order.orderDate)} · ${escapeHtml(order.paymentMethod.toUpperCase())}</p></div><span class="self-start rounded-full bg-[#cce6d0] text-primary px-3 py-1 text-sm font-bold">${escapeHtml(order.status)}</span></div><div class="grid md:grid-cols-[1fr_auto] gap-6 py-5"><div class="space-y-3">${order.items.map(item => `<div class="flex items-center gap-3"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" class="w-12 h-12 object-cover rounded-lg"><div class="flex-1"><p class="font-semibold">${escapeHtml(item.name)}</p><p class="text-sm text-on-surface-variant">Qty: ${item.quantity}</p></div><p class="font-semibold text-primary">₹${(Number(item.price) * Number(item.quantity)).toFixed(2)}</p></div>`).join('')}</div><div class="md:text-right"><p class="text-sm text-on-surface-variant">Total paid</p><p class="font-heading text-2xl font-bold text-primary">₹${Number(order.total).toFixed(2)}</p></div></div><div class="rounded-lg bg-[#f3f4f5] px-4 py-4 flex items-start gap-3"><span class="material-symbols-outlined text-primary">event</span><div><p class="font-bold text-primary">Expected delivery</p><p class="text-sm text-on-surface-variant">Your order is expected on <strong>${formatDate(order.deliveryDate)}</strong>.</p></div></div></article>`).join('');
+    </script>
+</body>
+</html>

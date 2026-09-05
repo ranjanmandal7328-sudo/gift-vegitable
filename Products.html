@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Products | Fresh Vegetables</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .product-card-shadow {
+            box-shadow: 0px 10px 30px rgba(45, 106, 79, 0.08);
+        }
+
+        .soft-ghost-border {
+            border: 1px solid #F1F3F5;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2D6A4F;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="cart.js"></script>
+    <script src="search.js"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f5238",
+                        "secondary-container": "#cce6d0",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "on-surface-variant": "#404943",
+                        "surface": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8f9fa",
+                        "outline-variant": "#bfc9c1",
+                        "primary-container": "#2d6a4f"
+                    },
+                    spacing: { "container-max": "1280px", "gutter": "24px", "unit-2": "8px", "unit-4": "16px", "unit-6": "24px", "unit-8": "32px", "unit-12": "48px" },
+                    fontFamily: { "body-md": ["Be Vietnam Pro"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Be Vietnam Pro"] }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body class="bg-background text-on-surface font-body-md">
+
+    <header class="w-full top-0 sticky z-50 bg-surface shadow-sm h-20">
+        <!-- <nav class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full"> -->
+                    <nav class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full">
+            <div class="flex items-center gap-unit-8">
+                <a class="font-headline-md text-2xl font-bold text-primary" href="#">Fresh Vegetables</a>
+                <div class="hidden md:flex items-center gap-unit-8">
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md" href="Home.html">Home</a>
+                    <a class="text-primary font-bold border-b-2 border-primary pb-1 text-center font-body-md text-body-md" href="./Products.html">Products</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md" href="./green.html">Green</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md"
+                        href="./About.html">About</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md"
+                        href="./Contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-unit-4">
+                <div class="hidden lg:flex relative">
+                    <input id="searchInput"
+                        class="bg-surface-container-low border-none rounded-lg px-unit-4 py-unit-2 w-80 focus:ring-2 focus:ring-primary-container outline-none"
+                        placeholder="Search vegetables" type="text"
+                        onkeypress="if(event.key==='Enter') searchProduct()">
+                    <span
+                        class="material-symbols-outlined absolute right-unit-2 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                </div>
+                <button class="p-unit-2 text-primary flex items-center gap-1">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span class="hidden sm:inline font-bold"><a href="cart.html">Cart</a></span>
+                </button>
+                <div class="relative" id="profileContainer">
+                    <button id="profileBtn" class="flex items-center gap-2 bg-primary text-on-primary px-unit-4 py-unit-2 rounded-lg font-bold">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <span class="hidden sm:inline">Profile</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-surface border border-outline-variant rounded-lg shadow-lg p-2 z-50">
+                        <a href="Registration.html" class="block px-2 py-2 hover:bg-surface-container-lowest rounded">My Profile</a>
+                        <a href="order.html" class="block px-2 py-2 hover:bg-surface-container-lowest rounded">My Orders</a>
+                        <a href="Contact.html" class="block px-2 py-2 hover:bg-surface-container-lowest rounded">Settings</a>
+                        <button id="logoutBtn" class="w-full text-left px-2 py-2 hover:bg-surface-container-lowest rounded">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-container-max mx-auto px-gutter py-unit-12">
+        <div class="flex flex-col md:flex-row gap-unit-8">
+            <aside class="w-full md:w-64 space-y-unit-8">
+                <h3 class="text-2xl font-bold mb-unit-4">Filters</h3>
+                <div>
+                    <p class="font-bold text-sm uppercase tracking-wider mb-unit-4">Categories</p>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2 cursor-pointer"><input checked type="checkbox"
+                            class="rounded text-primary" data-category="all" /><span class="text-sm">All Vegetables</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox"
+                            class="rounded text-primary" data-category="Leafy Greens" /><span class="text-sm">Leafy Greens</span></label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox"
+                            class="rounded text-primary" data-category="Root Veggies" /><span class="text-sm">Root Veggies</span></label>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="flex-grow">
+                <div class="flex justify-between items-center mb-unit-8">
+                    <p class="text-on-surface-variant">Showing <span class="font-bold text-on-surface">11</span> premium
+                        fresh vegetables</p>
+                    <select id="sortSelect" class="bg-surface border border-outline-variant rounded-lg p-2">
+                        <option value="featured">Sort by: Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                    </select>
+                </div>
+
+                <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-unit-6">
+                    <!-- 1. Tomato -->
+                    <div class="product-card-shadow" data-featured="true">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                                <a href="cart.html"></a>
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNpyrY_DB47Dhvb7kYT-_zRmZ-YoSk_3U2k5Uelq5I99jLxAvwJLh4wHRyv0GJrBtOCijkum3DwlnLqccWLp4BXwpSHk6HPzOIqk_TmcjyPUIvmLvDHzxGvqaVV9L31owDvx9uX7IYN5eP9o0mOShVR2UMOwlAgGyZm3ihTWaftRYHyfa0gisO4VBCUIb_bvaQDZAQNcTW44kAzTSuEIEVeIpG6vS73j-f7l83aGV-3HmelQDDV3cpvI7IFnCaVwco-ZI_2MyUP7Vl"
+                                    alt="Tomato" />
+                                </a>
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Tomato</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">500g</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹45</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-white"
+                                        data-name="Tomato" data-price="45"
+                                        data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCNpyrY_DB47Dhvb7kYT-_zRmZ-YoSk_3U2k5Uelq5I99jLxAvwJLh4wHRyv0GJrBtOCijkum3DwlnLqccWLp4BXwpSHk6HPzOIqk_TmcjyPUIvmLvDHzxGvqaVV9L31owDvx9uX7IYN5eP9o0mOShVR2UMOwlAgGyZm3ihTWaftRYHyfa0gisO4VBCUIb_bvaQDZAQNcTW44kAzTSuEIEVeIpG6vS73j-f7l83aGV-3HmelQDDV3cpvI7IFnCaVwco-ZI_2MyUP7Vl">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Carrot -->
+                    <div class="product-card-shadow" data-featured="true">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUFzR-fM8qpdGNXSlEdpD1fkkw4BbMhgQZ3NjCrCPsipeR_szpxrJtBzv8RBuQeOdfRwPAcChLkBnY-uQ_ixcj9EiauINx4P7mMaQxocDd5mpaoQsghxM_6dBq63patxEBHtQz53y3D_Erl5AL_2q1vHleSHYI3IjNqO74sIR6ppfH23AhK2NeZTHkazOQxeVlaM592yGCKWUwXP7mV0l-q_QGOin9HZAMb_dPQy06cgGU6KejgprXt7tXnDb14WXLYaQnfR-kg9_R"
+                                    alt="Carrot" />
+
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Carrot</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">500g</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹35</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-white"
+                                        data-name="Carrot" data-price="35"
+                                        data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCUFzR-fM8qpdGNXSlEdpD1fkkw4BbMhgQZ3NjCrCPsipeR_szpxrJtBzv8RBuQeOdfRwPAcChLkBnY-uQ_ixcj9EiauINx4P7mMaQxocDd5mpaoQsghxM_6dBq63patxEBHtQz53y3D_Erl5AL_2q1vHleSHYI3IjNqO74sIR6ppfH23AhK2NeZTHkazOQxeVlaM592yGCKWUwXP7mV0l-q_QGOin9HZAMb_dPQy06cgGU6KejgprXt7tXnDb14WXLYaQnfR-kg9_R">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Spinach -->
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtkHVXXAzlmEcRtC-6Afv4f5aFzcAdOx14MptFXQcc-HFuyusuwiw2s-8Xea4mhEGceSyu4cBaXkGo-NsQIeVzUDMpHSPZaAV4fvam9G9Ro-mE0hp43EbiEB5oGZYvaBX4iAZ68kz1IVXY7YVvHx6qYfCzH7votQCIuDGZMHcd6L2RxEIqUAZ0m6YtYVFSzuD4luIpsDhM87d0WexlJTyCsnCXBDAMk11LQyFXuFHK1R-49thI03Ms2DacH1HpwfZ6NoaCNfk0LP_B"
+                                    alt="Spinach">
+
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Spinach</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">250g</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹28</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="spinach" data-price="28"
+                                        data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBtkHVXXAzlmEcRtC-6Afv4f5aFzcAdOx14MptFXQcc-HFuyusuwiw2s-8Xea4mhEGceSyu4cBaXkGo-NsQIeVzUDMpHSPZaAV4fvam9G9Ro-mE0hp43EbiEB5oGZYvaBX4iAZ68kz1IVXY7YVvHx6qYfCzH7votQCIuDGZMHcd6L2RxEIqUAZ0m6YtYVFSzuD4luIpsDhM87d0WexlJTyCsnCXBDAMk11LQyFXuFHK1R-49thI03Ms2DacH1HpwfZ6NoaCNfk0LP_B">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Broccoli -->
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                                <!-- <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" -->
+
+                                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaReASfVKky047BsAvDDKBey4r78k1WQts2YPXqcjphVt1tFmQrNnRi2o6pIQChnPCZCgb0j-Fs1lFvk7-An1B66xJgGSYnTTOKmQCPwEAAbNfl7w0jVedCezrhCqIulm2WPYbu6L6HdyX2nmedN4Z_ujtafUH5-lzNvJVyi3Nsylowb3vzQyOUBNTxt8-TZq3liGPzd33o-0F1YfR7oGvn-Fej7NeoD5650OE2HxrLv1tsbwrEEP-hF2xCDg627atDfYeQMzBbHUw"
+                                    alt="Broccoli" />
+
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Broccoli</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">1 Unit (~400g)</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹85</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                            data-name="broccoli" data-price="85"
+                                            data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAaReASfVKky047BsAvDDKBey4r78k1WQts2YPXqcjphVt1tFmQrNnRi2o6pIQChnPCZCgb0j-Fs1lFvk7-An1B66xJgGSYnTTOKmQCPwEAAbNfl7w0jVedCezrhCqIulm2WPYbu6L6HdyX2nmedN4Z_ujtafUH5-lzNvJVyi3Nsylowb3vzQyOUBNTxt8-TZq3liGPzd33o-0F1YfR7oGvn-Fej7NeoD5650OE2HxrLv1tsbwrEEP-hF2xCDg627atDfYeQMzBbHUw">
+                                           <span class="material-symbols-outlined">
+                                                add_shopping_cart
+                                            </span>
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Bell Peppers -->
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                            
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvabVAoIDnPL6eiTd-PcEde4u3VyPiY6yWsWPmrBMDY9xzLhzWwRrdNk_Gx4NXLf3tLzzxWt50YNVoAZeoyh08fQP9JyByAP2r-idgdbe1R87vanWb6Y1W4Mqm7pZWGHOgftQlSH-B0Fx1wjG0aP88xHYjQriLcx7O-89H3xGuexD9J53WEDyxA0MzK_9P7bCMovTPgxXd0MzP-QKu3aJdzXh0NOVbK2E2U_8vxzqFwrcQrIJxojcuQGG7zKiy5csIEjAlHw5TsgpP"
+                                        alt="Bell Peppers" />
+                                
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Bell Peppers</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">500g</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹120</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="Bell Peppers"
+                                        data-price="120"
+                                        data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAvabVAoIDnPL6eiTd-PcEde4u3VyPiY6yWsWPmrBMDY9xzLhzWwRrdNk_Gx4NXLf3tLzzxWt50YNVoAZeoyh08fQP9JyByAP2r-idgdbe1R87vanWb6Y1W4Mqm7pZWGHOgftQlSH-B0Fx1wjG0aP88xHYjQriLcx7O-89H3xGuexD9J53WEDyxA0MzK_9P7bCMovTPgxXd0MzP-QKu3aJdzXh0NOVbK2E2U_8vxzqFwrcQrIJxojcuQGG7zKiy5csIEjAlHw5TsgpP">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Garlic -->
+
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                                
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        src="Gerlic.jpg" alt="Garlic" />
+                                
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Organic Garlic</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">500g</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹65</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="Organic Garlic"
+                                        data-price="65"
+                                        data-image="Gerlic.jpg">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Ginger -->
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                               
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        src="./Ginger.jpg">
+                                
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Fresh Ginger</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">250g</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹40</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="Fresh Ginger"
+                                        data-price="40"
+                                        data-image="./Ginger.jpg">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Sweet Corn -->
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                                
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        src="Sweet Corn.jpg" alt="Sweet Corn" />
+                            
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Sweet Corn</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">2 Units</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹55</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="Sweet Corn"
+                                        data-price="55"
+                                        data-image="Sweet Corn.jpg">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Potato -->
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                                
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        src="Potato.jpg" alt="Potato" />
+                                
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold mb-1">Organic Potato</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">1kg</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹40</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="Organic Potato"
+                                        data-price="40"
+                                        data-image="Potato.jpg">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Cabbage -->
+                    <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                                
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        src="./Cabbage.jpg" alt="Cabbage" />
+                                
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold">Cabbage</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">1kg</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹40</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="Cabbage"
+                                        data-price="40"
+                                        data-image="./Cabbage.jpg">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- cauliflower -->
+                                        <div class="product-card-shadow">
+                        <div
+                            class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1">
+                            <div class="relative aspect-square bg-surface-container">
+                                
+                                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                        src="Cauliflower.jpg" alt="Cauliflower" />
+                                
+                            </div>
+                            <div class="p-unit-4">
+                                <h4 class="text-xl font-bold">Cauliflower</h4>
+                                <p class="text-on-surface-variant text-sm mb-4">1kg</p>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-primary">₹40</span>
+                                    <button
+                                        class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors"
+                                        data-name="Cauliflower"
+                                        data-price="40"
+                                        data-image="Cauliflower.jpg">
+                                        <span class="material-symbols-outlined">
+                                            add_shopping_cart
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    const select = document.getElementById('sortSelect');
+    const grid = document.getElementById('productsGrid');
+    if(!select || !grid) return;
+    const managedProducts = JSON.parse(localStorage.getItem('freshVegetableProducts') || '[]');
+    const escapeHtml = value => String(value).replace(/[&<>'"]/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[character]));
+    managedProducts.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card-shadow';
+        card.dataset.category = product.category;
+        card.innerHTML = `<div class="bg-surface-container-lowest rounded-xl overflow-hidden soft-ghost-border product-card-shadow group transition-transform hover:-translate-y-1"><div class="relative aspect-square bg-surface-container"><img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}"></div><div class="p-unit-4"><h4 class="text-xl font-bold mb-1">${escapeHtml(product.name)}</h4><p class="text-on-surface-variant text-sm mb-4">${escapeHtml(product.size)}</p><div class="flex justify-between items-center"><span class="text-xl font-bold text-primary">₹${Number(product.price).toFixed(2)}</span><button class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-colors" data-name="${escapeHtml(product.name)}" data-price="${Number(product.price)}" data-image="${escapeHtml(product.image)}"><span class="material-symbols-outlined">add_shopping_cart</span></button></div></div></div>`;
+        grid.appendChild(card);
+    });
+    const productCount = document.querySelector('section.flex-grow p');
+    if (productCount) productCount.innerHTML = `Showing <span class="font-bold text-on-surface">${grid.children.length}</span> premium fresh vegetables`;
+    const categoryByName = {
+        tomato: 'Fruit Vegetables', carrot: 'Root Veggies', spinach: 'Leafy Greens', broccoli: 'Leafy Greens',
+        'bell peppers': 'Fruit Vegetables', 'organic garlic': 'Root Veggies', 'fresh ginger': 'Root Veggies',
+        'sweet corn': 'Fruit Vegetables', 'organic potato': 'Root Veggies', cabbage: 'Leafy Greens', cauliflower: 'Leafy Greens'
+    };
+    Array.from(grid.children).forEach(card => {
+        if (!card.dataset.category) {
+            const name = card.querySelector('h4')?.textContent.trim().toLowerCase();
+            card.dataset.category = categoryByName[name] || 'Other';
+        }
+    });
+    const categoryFilters = document.querySelectorAll('input[data-category]');
+    const updateCategoryFilter = () => {
+        const allFilter = document.querySelector('input[data-category="all"]');
+        const selected = Array.from(categoryFilters).filter(filter => filter.checked && filter.dataset.category !== 'all').map(filter => filter.dataset.category);
+        if (selected.length) allFilter.checked = false;
+        else allFilter.checked = true;
+        const visibleCount = Array.from(grid.children).filter(card => {
+            const visible = !selected.length || selected.includes(card.dataset.category);
+            card.classList.toggle('hidden', !visible);
+            return visible;
+        }).length;
+        if (productCount) productCount.innerHTML = `Showing <span class="font-bold text-on-surface">${visibleCount}</span> premium fresh vegetables`;
+    };
+    categoryFilters.forEach(filter => filter.addEventListener('change', () => {
+        if (filter.dataset.category === 'all' && filter.checked) categoryFilters.forEach(other => { if (other !== filter) other.checked = false; });
+        updateCategoryFilter();
+    }));
+    updateCategoryFilter();
+    function getPrice(card){
+        const btn = card.querySelector('button[data-price]');
+        if(btn) return parseFloat(btn.getAttribute('data-price')) || 0;
+        const priceEl = card.querySelector('.text-xl.font-bold.text-primary');
+        if(priceEl) return parseFloat(priceEl.textContent.replace(/[^0-9.]/g,'')) || 0;
+        return 0;
+    }
+    function isFeatured(card){ return card.getAttribute('data-featured') === 'true'; }
+    function sortProducts(mode){
+        const items = Array.from(grid.children);
+        if(mode === 'price-asc'){
+            items.sort((a,b)=> getPrice(a)-getPrice(b));
+        } else {
+            items.sort((a,b)=>{
+                const fa = isFeatured(a)?0:1;
+                const fb = isFeatured(b)?0:1;
+                if(fa !== fb) return fa - fb;
+                return getPrice(a)-getPrice(b);
+            });
+        }
+        items.forEach(i=> grid.appendChild(i));
+    }
+        select.addEventListener('change', ()=> sortProducts(select.value));
+        sortProducts(select.value || 'featured');
+
+        // Profile dropdown toggle + logout
+        const profileBtn = document.getElementById('profileBtn');
+        const profileMenu = document.getElementById('profileMenu');
+        if(profileBtn && profileMenu){
+            profileBtn.addEventListener('click', function(e){
+                e.stopPropagation();
+                profileMenu.classList.toggle('hidden');
+            });
+            document.addEventListener('click', function(){
+                profileMenu.classList.add('hidden');
+            });
+            const logoutBtn = document.getElementById('logoutBtn');
+            if(logoutBtn){
+                logoutBtn.addEventListener('click', function(){
+                    // simple logout behaviour: redirect to login page
+                    window.location.href = 'Login.html';
+                });
+            }
+        }
+});
+</script>
+
+</html>

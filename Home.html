@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fresh Vegetables | Farm-to-Table Clarity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#cee9d3",
+                        "secondary-container": "#cce6d0",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#707973",
+                        "primary-fixed": "#b1f0ce",
+                        "on-secondary-container": "#506856",
+                        "on-primary-fixed": "#002114",
+                        "tertiary-fixed": "#ffdcc6",
+                        "inverse-surface": "#2e3132",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#edeeef",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-fixed-dim": "#b3cdb7",
+                        "tertiary-container": "#855430",
+                        "on-secondary-fixed-variant": "#354c3b",
+                        "primary-fixed-dim": "#95d4b3",
+                        "outline-variant": "#bfc9c1",
+                        "primary": "#0f5238",
+                        "tertiary": "#693d1b",
+                        "background": "#f8f9fa",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#4c6452",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#2d6a4f",
+                        "on-secondary-fixed": "#092012",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-tint": "#2c694e",
+                        "surface-bright": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#95d4b3",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#683c1a",
+                        "surface": "#f8f9fa",
+                        "on-surface-variant": "#404943",
+                        "on-tertiary-container": "#ffd1b3",
+                        "on-primary-container": "#a8e7c5",
+                        "tertiary-fixed-dim": "#f9b98d",
+                        "on-surface": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit-4": "16px",
+                        "unit-12": "48px",
+                        "unit-1": "4px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "unit-8": "32px",
+                        "unit-6": "24px",
+                        "unit-2": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .organic-shadow {
+            box-shadow: 0px 10px 30px rgba(45, 106, 79, 0.08);
+        }
+
+        .soft-ghost-border {
+            border: 1px solid #F1F3F5;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e7f3ee 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+    <!-- TopNavBar -->
+    <header class="w-full top-0 sticky z-50 bg-surface shadow-sm h-20">
+        <nav class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full">
+            <div class="flex items-center gap-unit-8">
+                <a class="font-headline-md text-2xl font-bold text-primary" href="#">Fresh Vegetables</a>
+                <div class="hidden md:flex items-center gap-unit-8">
+                    <a class="text-primary font-bold border-b-2 border-primary pb-1 text-center font-body-md text-body-md" href="Home.html">Home</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md" href="./Products.html">Products</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md" href="./green.html">Green</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md"
+                        href="./About.html">About</a>
+                    <a class="text-on-surface-variant hover:text-primary transition-colors text-center font-body-md text-body-md"
+                        href="./Contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-unit-4">
+                <div class="hidden lg:flex relative">
+                    <input id="searchInput"
+                        class="bg-surface-container-low border-none rounded-lg px-unit-4 py-unit-2 w-80 focus:ring-2 focus:ring-primary-container outline-none"
+                        placeholder="Search vegetables" type="text"
+                        onkeypress="if(event.key==='Enter') searchProduct()">
+                    <span
+                        class="material-symbols-outlined absolute right-unit-2 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+                </div>
+                <button class="p-unit-2 text-primary flex items-center gap-1">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span
+                        class="absolute top-0 right-0 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </button>
+                <div class="relative" id="profileContainer">
+                    <button id="profileBtn" class="flex items-center gap-2 bg-primary text-on-primary px-unit-4 py-unit-2 rounded-lg font-bold" type="button">
+                        <span class="material-symbols-outlined">account_circle</span>
+                        <span class="hidden sm:inline">Profile</span>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </button>
+                    <div id="profileMenu" class="hidden absolute right-0 mt-2 w-48 bg-white border border-outline-variant rounded-lg shadow-lg p-2 z-50">
+                        <a href="Registration.html" class="block px-2 py-2 hover:bg-surface-container-lowest rounded">My Profile</a>
+                        <a href="order.html" class="block px-2 py-2 hover:bg-surface-container-lowest rounded">My Orders</a>
+                        <a href="Contact.html" class="block px-2 py-2 hover:bg-surface-container-lowest rounded">Settings</a>
+                        <button id="logoutBtn" class="w-full text-left px-2 py-2 hover:bg-surface-container-lowest rounded" type="button">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        const profileBtn = document.getElementById('profileBtn');
+        const profileMenu = document.getElementById('profileMenu');
+        if (profileBtn && profileMenu) {
+            profileBtn.addEventListener('click', event => {
+                event.stopPropagation();
+                profileMenu.classList.toggle('hidden');
+            });
+            document.addEventListener('click', () => profileMenu.classList.add('hidden'));
+        }
+        document.getElementById('logoutBtn')?.addEventListener('click', () => { window.location.href = 'Login.html'; });
+    </script>
+    <main>
+
+
+</head>
+
+
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden hero-gradient py-unit-12 lg:py-24">
+            <div class="max-w-container-max mx-auto px-gutter flex flex-col lg:flex-row items-center gap-unit-12">
+                <div class="w-full lg:w-1/2 space-y-unit-6 z-10">
+                    <div
+                        class="inline-flex items-center px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-full text-caption font-label-md">
+                        <span class="material-symbols-outlined text-[16px] mr-1"
+                            style="font-variation-settings: 'FILL' 1;">eco</span>
+                        100% ORGANICALLY GROWN
+                    </div>
+                    <h1 class="font-display-lg text-display-lg text-on-background leading-tight">
+                        Crisp Freshness <br /> <span class="text-primary">Directly to Your Table</span>
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Experience the vibrant vitality of morning-harvested vegetables. We connect local farmers with
+                        your kitchen for ultimate quality and taste.
+                    </p>
+                    <div class="flex flex-wrap gap-unit-4 pt-unit-4">
+                        <button
+                            class="px-unit-12 py-4 bg-primary text-white rounded-lg font-label-md text-body-md hover:bg-primary-container transition-all shadow-lg shadow-primary/20">
+
+                            <a href="./Products.html">Shop Now</a></button>
+                        <button
+                            class="px-unit-8 py-4 border-2 border-primary text-primary rounded-lg font-label-md text-body-md hover:bg-primary/5 transition-all">
+                            View Seasonal Deals
+                        </button>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 relative">
+                    <div
+                        class="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden organic-shadow">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A vibrant and crisp overhead shot of various fresh green vegetables including kale, broccoli, and artisanal lettuce arranged artfully on a light marble countertop. The lighting is bright and natural, as if from a morning sun, highlighting water droplets on the leaves. The aesthetic is clean, minimalist, and high-end, emphasizing organic textures and deep emerald greens."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ4TIk59F5HJF4N62DBRjGnClLzJ5MzrIxFK67O-YDodu4RMuiLfWn6Zvb4vWj6FwEJqza1N9zOSZERk69DIRkka-4yRz2gou-CeyVEENZOGyF5wG4JnltXcDp9m4gmaAgYnOCVNRcE3OBp5hfNNG1EohjkDiwRXRjkyqdQCVDoWia4E37SqaN-W9F4PkrTu-gVhBvu3eDHAEk9TdbNoYIHhhX3xfvH-xzIULEGk-CjjJJ08Dfwuh9KexqzbEsDtvO8u5vtYNFM6pJ" />
+                    </div>
+                    <!-- Floating Card -->
+                    <div
+                        class="absolute -bottom-6 -left-6 bg-white p-unit-4 rounded-xl organic-shadow soft-ghost-border hidden sm:flex items-center gap-unit-4 z-20">
+                        <div class="w-12 h-12 bg-secondary-fixed rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">local_shipping</span>
+                        </div>
+                        <div>
+                            <p class="font-label-md text-primary">Express Delivery</p>
+                            <p class="text-caption text-on-surface-variant">Arrives in under 4 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured Categories -->
+        <section class="py-unit-12 lg:py-24 bg-white">
+            <div class="max-w-container-max mx-auto px-gutter">
+                <div class="flex justify-between items-end mb-unit-12">
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg text-on-background">Featured Categories</h2>
+                        <p class="text-on-surface-variant font-body-md mt-unit-2">Hand-picked selections from our local
+                            gardens</p>
+                    </div>
+                    <a class="text-primary font-bold hover:underline flex items-center gap-unit-1" href="#">
+                        View All <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-unit-8">
+                    <!-- Category Card 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            data-alt="A high-resolution close-up of lush leafy green vegetables like spinach, arugula, and Swiss chard with vibrant green stems. The scene is bright and airy with soft focus in the background, creating a professional food photography look. The color palette is dominated by rich greens and bright whites."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBZ9pPzdAeb2cSdfnLyslSMvOOwF6Ytubld9TqjOR_TRbtc2KsvA4k9VtJr8XbUsbB3LiTntOE8HfC5IwOOZRqHrL4-wlhJmoENFXUUBFJHpHmd4rgo215z0_nQzeN4f5d2KSNI2Nd4-O1crIcxKyDJrjPCeb2Ol_74RGuSeyj7W0-E1nhhBtB15XPDtWpxOu2bnLYugIvpkvXDVEWEmVpl2rgD46NyAZWLufdAAFNy43DK5Qt8oGFIsuM6L51ksfGrUYaTdSIu7JVD')">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-unit-8 w-full">
+                            <span
+                                class="inline-block px-3 py-1 bg-primary text-white rounded-full text-caption mb-unit-2">Fresh
+                                Daily</span>
+                            <h3 class="text-white font-headline-md text-headline-md">Leafy Greens</h3>
+                            <p
+                                class="text-white/80 font-body-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Spinach, Kale &amp; More</p>
+                        </div>
+                    </div>
+                    <!-- Category Card 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            data-alt="An artistic arrangement of various root vegetables including vibrant orange carrots, purple beets, and rustic potatoes on a clean wooden surface. The lighting is warm and directional, emphasizing the earthy textures and natural colors. The overall mood is artisanal and wholesome."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjQJ46i39VUeodf8JbeRugeg2uuU28xw4sf6pJQq5T4Ez07ex7s8BEyJAa_0F45vptV2tiiQrQP1LiyAsDVyRDAOKjdh7mtsspDCmbAc1Af3V4u8edK_CytBOsTrDME0Q_YD2uxVzDt440pw2uL0p4arEkCNJMVnfq6wd9Tsa0zwO9cOINMg0cPxmAQDyYmV_G9VxCUh304M8fPyCsiXsFu03DU2IC3ULl0wscPUGtxlJ6G3wJoWbJkqfIouNMjzJWG5Wpo-gxBhhu')">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-unit-8 w-full">
+                            <span
+                                class="inline-block px-3 py-1 bg-primary text-white rounded-full text-caption mb-unit-2">Earthy
+                                Goodness</span>
+                            <h3 class="text-white font-headline-md text-headline-md">Root Vegetables</h3>
+                            <p
+                                class="text-white/80 font-body-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Carrots, Beets &amp; Potatoes</p>
+                        </div>
+                    </div>
+                    <!-- Category Card 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                            data-alt="A colorful display of exotic vegetables like dragon fruit, heirloom tomatoes in various shades, and Romanesco cauliflower with its fractal patterns. The image is bright and high-contrast, showcasing unique shapes and striking colors. The style is modern, vibrant, and appetizing."
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeEHBpYWUC5IpxlW7RzILFeyB5m12FCzKA7d9fci3Pm9A-UCjgxyD32McTrNCv6BYVNBvQKScTKxi4QjY6EQc1Js8G_rFq6NngeQH8V9iDiF57QBxGKlKSaKA9AKNpP5l5b2X8WUUHQ6CoLSUWKLn5fdMnx2_m_jd0Fo0sxEL3ORfnvCimCy7lRmPZCgvehTI1WTwrGLlnGl9KmYf3ycgUnvWKzK4G6DAKyqLwTQXnQhlIfvJspsYj4SuNwBszvwo-eceCOVXWGSqB')">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-unit-8 w-full">
+                            <span
+                                class="inline-block px-3 py-1 bg-primary text-white rounded-full text-caption mb-unit-2">Premium
+                                Pick</span>
+                            <h3 class="text-white font-headline-md text-headline-md">Exotic Finds</h3>
+                            <p
+                                class="text-white/80 font-body-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Rare &amp; Global Varieties</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Us -->
+        <section class="py-unit-12 lg:py-24 bg-surface-container-low">
+            <div class="max-w-container-max mx-auto px-gutter">
+                <div class="text-center max-w-2xl mx-auto mb-unit-12">
+                    <h2 class="font-headline-lg text-headline-lg text-on-background">Why Choose Us?</h2>
+                    <p class="text-on-surface-variant font-body-md mt-unit-4">We've spent years building relationships
+                        with the best local growers to ensure you get nothing but the best.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-unit-8">
+                    <!-- Feature 1 -->
+                    <div
+                        class="bg-white p-unit-8 rounded-2xl soft-ghost-border organic-shadow hover:-translate-y-1 transition-transform">
+                        <div
+                            class="w-16 h-16 bg-secondary-fixed rounded-2xl flex items-center justify-center mb-unit-6">
+                            <span
+                                class="material-symbols-outlined text-primary text-[32px]">temp_preferences_custom</span>
+                        </div>
+                        <h4 class="font-headline-md text-headline-md text-primary mb-unit-2">Farm-to-Door Fresh</h4>
+                        <p class="text-on-surface-variant font-body-md">Our produce is harvested at dawn and delivered
+                            to your doorstep within hours, preserving peak nutrition and flavor.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div
+                        class="bg-white p-unit-8 rounded-2xl soft-ghost-border organic-shadow hover:-translate-y-1 transition-transform">
+                        <div
+                            class="w-16 h-16 bg-secondary-fixed rounded-2xl flex items-center justify-center mb-unit-6">
+                            <span class="material-symbols-outlined text-primary text-[32px]">handyman</span>
+                        </div>
+                        <h4 class="font-headline-md text-headline-md text-primary mb-unit-2">Locally Sourced</h4>
+                        <p class="text-on-surface-variant font-body-md">We partner exclusively with sustainable local
+                            farms within a 50-mile radius, supporting our community and reducing carbon footprint.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div
+                        class="bg-white p-unit-8 rounded-2xl soft-ghost-border organic-shadow hover:-translate-y-1 transition-transform">
+                        <div
+                            class="w-16 h-16 bg-secondary-fixed rounded-2xl flex items-center justify-center mb-unit-6">
+                            <span class="material-symbols-outlined text-primary text-[32px]">verified</span>
+                        </div>
+                        <h4 class="font-headline-md text-headline-md text-primary mb-unit-2">Certified Quality</h4>
+                        <p class="text-on-surface-variant font-body-md">Every item undergoes a rigorous 5-point quality
+                            check to ensure it's free from pesticides and meets our high standards.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Product Preview Bento -->
+        <section class="py-unit-12 lg:py-24 bg-white overflow-hidden">
+            <div class="max-w-container-max mx-auto px-gutter">
+                <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-unit-6">
+                    <!-- Highlight Card -->
+                    <div
+                        class="md:col-span-2 lg:col-span-8 bg-primary-container rounded-3xl p-unit-8 flex flex-col md:flex-row items-center gap-unit-8 relative overflow-hidden">
+                        <div class="z-10 flex-1">
+                            <h3 class="font-display-lg text-[40px] text-white leading-tight mb-unit-4">Weekly Harvest
+                                Box</h3>
+                            <p class="text-on-primary-container font-body-md mb-unit-6">Get a curated selection of the
+                                season's best produce, enough for a family of four. Delivered every Monday.</p>
+                            <button
+                                class="bg-white text-primary px-unit-8 py-3 rounded-full font-label-md hover:bg-secondary-fixed transition-colors">Pre-order
+                                Now</button>
+                        </div>
+                        <div class="w-full md:w-1/2 aspect-square relative z-10">
+                            <img class="w-full h-full object-contain drop-shadow-2xl"
+                                data-alt="A beautifully packed rustic wooden crate filled with an assortment of fresh vegetables: bright red peppers, crisp green cucumbers, deep purple eggplants, and bunches of vibrant herbs. The lighting is bright and appetizing, highlighting the natural gloss and textures. The background is a clean white studio setting."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZZo39BpvIZd7upJyKbECWLRHmGuO5TYENXE-AGqda9eSYgrHj2OUfcWkPppkhqJf4PmxKSAOqTWtQJ0s0bam1pnakbJAGSfAI3hS-K6RTcK1imY-jyNR76fU1lwiq2JGsyu-xUVKbQD6mJZEhFz5yNaABRZ9Pd6p71HeCi202oCYPGo6ScA2YljeS76he_xWNtsuZZvnuDzZFHT4_lHgUAC2TFvh_FPjXMUSg0b-kw36L9e_JPL2WU8JCMSq2t6B0EJBBlp5IM1_B" />
+                        </div>
+                        <!-- Abstract shape -->
+                        <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl"></div>
+                    </div>
+                    <!-- Side Card 1 -->
+                    <div
+                        class="md:col-span-2 lg:col-span-4 bg-secondary-fixed rounded-3xl p-unit-8 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-primary mb-unit-2">Seasonal Berries</h3>
+                            <p class="text-on-secondary-fixed-variant font-body-md">Freshly picked mountain strawberries
+                                and blueberries.</p>
+                        </div>
+                        </body>
+                        </html>

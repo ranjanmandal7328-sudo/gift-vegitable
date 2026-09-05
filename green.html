@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Green Community | GreenMarket</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e1e3e4",
+                      "on-surface-variant": "#404943",
+                      "secondary-fixed-dim": "#b3cdb7",
+                      "inverse-primary": "#95d4b3",
+                      "surface-dim": "#d9dadb",
+                      "tertiary-fixed-dim": "#f9b98d",
+                      "outline-variant": "#bfc9c1",
+                      "surface-container-highest": "#e1e3e4",
+                      "on-primary-fixed-variant": "#0e5138",
+                      "primary-container": "#2d6a4f",
+                      "surface-container-high": "#e7e8e9",
+                      "secondary-container": "#cce6d0",
+                      "surface-container": "#edeeef",
+                      "secondary-fixed": "#cee9d3",
+                      "inverse-on-surface": "#f0f1f2",
+                      "tertiary-container": "#855430",
+                      "surface-container-low": "#f3f4f5",
+                      "surface-bright": "#f8f9fa",
+                      "on-secondary-fixed": "#092012",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#ffd1b3",
+                      "on-tertiary": "#ffffff",
+                      "secondary": "#4c6452",
+                      "on-tertiary-fixed-variant": "#683c1a",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#2c694e",
+                      "on-secondary-container": "#506856",
+                      "on-surface": "#191c1d",
+                      "on-primary-fixed": "#002114",
+                      "background": "#f8f9fa",
+                      "on-background": "#191c1d",
+                      "inverse-surface": "#2e3132",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#a8e7c5",
+                      "primary": "#0f5238",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#95d4b3",
+                      "on-secondary-fixed-variant": "#354c3b",
+                      "outline": "#707973",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "tertiary": "#693d1b",
+                      "tertiary-fixed": "#ffdcc6",
+                      "surface": "#f8f9fa",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#301400",
+                      "primary-fixed": "#b1f0ce"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit-4": "16px",
+                      "margin-mobile": "16px",
+                      "unit-12": "48px",
+                      "base": "4px",
+                      "unit-8": "32px",
+                      "container-max": "1280px",
+                      "unit-6": "24px",
+                      "gutter": "24px",
+                      "unit-1": "4px",
+                      "unit-2": "8px"
+              },
+              "fontFamily": {
+                      "label-md": ["Be Vietnam Pro"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Be Vietnam Pro"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "caption": ["Be Vietnam Pro"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "body-lg": ["Be Vietnam Pro"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-shadow {
+            box-shadow: 0px 10px 30px rgba(45, 106, 79, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-surface-container-lowest shadow-sm">
+<nav class="flex justify-between items-center w-full px-unit-6 md:px-unit-8 max-w-container-max mx-auto h-unit-12">
+<!-- Brand Logo -->
+<a class="text-headline-md font-headline-md font-bold text-primary" href="#">GreenMarket</a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-unit-6">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="./Home.html">Home</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="./Products.html">Products</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Green</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="./About.html">About</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary transition-colors duration-200" href="./Contact.html">Contact</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-unit-4">
+<div class="hidden md:block">
+<div class="relative">
+<input class="bg-surface-bright border-none rounded-full py-2 pl-4 pr-10 text-body-md w-64 focus:ring-2 focus:ring-primary-fixed" placeholder="Search for fresh kale..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary active:scale-95 transition-all">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative py-unit-12 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-10">
+
+</div>
+<div class="max-w-container-max mx-auto px-unit-6 md:px-unit-8 relative z-10 text-center">
+<h1 class="text-display-lg font-display-lg text-primary mb-unit-4 tracking-tight">Green Community</h1>
+<p class="text-body-lg font-body-lg text-secondary max-w-2xl mx-auto">
+                    Share your harvest and connect with fellow organic lovers. From backyard patches to urban balconies, let's celebrate growing together.
+                </p>
+<div class="mt-unit-8 flex justify-center gap-unit-4">
+<button class="bg-primary text-on-primary px-unit-6 py-unit-2 rounded-lg font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_photo_alternate</span>
+                        Share Your Harvest
+                    </button>
+<button class="border border-outline-variant text-primary px-unit-6 py-unit-2 rounded-lg font-label-md text-label-md hover:bg-secondary-container transition-colors">
+                        Browse Stories
+                    </button>
+</div>
+</div>
+</section>
+<!-- Product Categories Navigation -->
+<section class="bg-surface-container-low border-b border-outline-variant py-unit-6">
+<div class="max-w-container-max mx-auto px-unit-6 md:px-unit-8">
+<h3 class="text-headline-md font-headline-md text-primary mb-unit-4">Featured Products</h3>
+<div class="flex flex-wrap gap-unit-2">
+<a class="bg-primary text-on-primary px-unit-4 py-2 rounded-lg font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors flex items-center gap-2" href="Products.html">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+All Products
+</a>
+<a class="border border-primary text-primary px-unit-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors" href="Products.html">
+Vegetables
+</a>
+<a class="border border-primary text-primary px-unit-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors" href="Products.html">
+Organic Certified
+</a>
+<a class="border border-primary text-primary px-unit-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors" href="Products.html">
+Seasonal
+</a>
+<a class="border border-primary text-primary px-unit-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors" href="Products.html">
+Fresh Harvest
+</a>
+</div>
+</div>
+</section>
+<!-- Community Grid with Products -->
+<section class="max-w-container-max mx-auto px-unit-6 md:px-unit-8 pb-unit-12">
+<div class="flex flex-col lg:flex-row gap-unit-8">
+<!-- Left: Community Posts -->
+<div class="flex-grow">
+<!-- Filter Chips -->
+<div class="flex flex-wrap gap-unit-2 mb-unit-8">
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-label-md font-label-md">All Posts</button>
+<button class="border border-secondary-container text-secondary px-4 py-1.5 rounded-full text-label-md font-label-md hover:bg-secondary-container">Home Harvest</button>
+<button class="border border-secondary-container text-secondary px-4 py-1.5 rounded-full text-label-md font-label-md hover:bg-secondary-container">Gardening Tips</button>
+<button class="border border-secondary-container text-secondary px-4 py-1.5 rounded-full text-label-md font-label-md hover:bg-secondary-container">Recipes</button>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Card 1: Cauliflower -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden organic-shadow group transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Organic Cauliflower" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsiOifRs35IH_PmUzh-wjgDqz9ws8TG_Ts1ZKEaPpQrPJhM-LVGQWBiTVzr67PhkMK1Oz_SFmPnjsjE74U0xV8UVPC2NWRa0JPO2UXMXxiEpR1mgHmLf-yOJ1YmZZ7ibiCQUzT9SG_8938rox3UlCT1GUqHSA5Qmfb60kECRuXAAeu8Rm7-1hOactZRrgIss6XovWYZF0aV-Bu31y_mVQYoawToGOqXEfNwxdSlRWayD8z9WVngUhXXWmAR"/>
+<div class="absolute top-4 right-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption font-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+                            Organic Certified
+                        </div>
+</div>
+<div class="p-unit-4">
+<div class="flex items-center gap-unit-2 mb-unit-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-primary font-bold">SM</div>
+<span class="text-label-md font-label-md text-on-surface">Sarah M.</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-unit-4">
+                            My first organic cauliflower harvest! The texture is incredibly crisp.
+                        </p>
+<div class="flex items-center justify-between border-t border-outline-variant pt-unit-4">
+<div class="flex items-center gap-unit-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-label-md">124</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-md">12</span>
+</button>
+</div>
+<button class="text-primary hover:underline font-label-md text-label-md">Read story</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Sweet Corn -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden organic-shadow group transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Organic Sweet Corn" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLv2_1fJk_5K1js5CSsBsaInSCyRyABENfsuoh78uAkqxyiRvn6948Qz9KfbcOQjdTMEUQsmVeosqPM5G7khnM-DIU9-Rb7bxuubqXqo10NW2dr4ky3rj4HUNHSQyV776PzbC1PHyywEzJIww3QQGWgyuW7AXn8guQnL8k2Cv8agT0q52Dep6GTrkQHYa52KSmepIpjDplnig0ouTW0yq0UBdHRlnk-Ddzfk-_nZmo1kFkPcINmaL1AuX49N"/>
+</div>
+<div class="p-unit-4">
+<div class="flex items-center gap-unit-2 mb-unit-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">JT</div>
+<span class="text-label-md font-label-md text-on-surface">James T.</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-unit-4">
+                            Freshly picked from the south field. Best served buttered! 🌽
+                        </p>
+<div class="flex items-center justify-between border-t border-outline-variant pt-unit-4">
+<div class="flex items-center gap-unit-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-label-md">89</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-md">5</span>
+</button>
+</div>
+<button class="text-primary hover:underline font-label-md text-label-md">Read story</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Cabbage -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden organic-shadow group transition-all duration-300 hover:-translate-y-1">
+<div class="aspect-square relative overflow-hidden">
+<img alt="Organic Cabbage" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLsYQ4-9S88vKs-Jh9NYMdZGDaDAQbfjPwtnZFU7oyiV4hqdfmRsT-3kYSfTDikOuzEiLA_aJ_R4iTTIEJq_Ulrll7V2FPL-3j3o33pDnWVrYDLuJfMkS9st6d0YVkjSDtRvgPpMfuwyZeQAjWSRfFnjtZylhDMtx5fpYiHuN9cfEtOYZ1eWR8m3scwm6rZotBc0-jN5OPlgrHZl3aO4a29mlpGvjoZX6T9L5_eSvgIAAkja9a70ATHfFe3f"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-lg text-caption font-caption">
+                            Staff Pick
+                        </div>
+</div>
+<div class="p-unit-4">
+<div class="flex items-center gap-unit-2 mb-unit-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold">EK</div>
+<span class="text-label-md font-label-md text-on-surface">Elena K.</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant mb-unit-4">
+                            Look at these vibrant green layers! Making homemade sauerkraut tonight.
+                        </p>
+<div class="flex items-center justify-between border-t border-outline-variant pt-unit-4">
+<div class="flex items-center gap-unit-4">
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-label-md">256</span>
+</button>
+<button class="flex items-center gap-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-label-md">31</span>
+</button>
+</div>
+<button class="text-primary hover:underline font-label-md text-label-md">Read story</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading Indicator / More Button -->
+<div class="mt-unit-12 text-center">
+<button class="border border-outline text-on-surface px-unit-8 py-3 rounded-xl hover:bg-surface-container-low transition-all font-label-md text-label-md">
+                    View More Community Posts
+                </button>
+</div>
+</div>
+
+<!-- Right: Featured Products Sidebar -->
+<aside class="w-full lg:w-80 flex-shrink-0">
+<div class="sticky top-24 bg-surface-container-lowest rounded-2xl border border-outline-variant p-unit-6 organic-shadow">
+<h2 class="text-headline-md font-headline-md text-primary mb-unit-6">Featured Products</h2>
+
+<!-- Product Card 1: Organic Tomato -->
+<div class="mb-unit-6 pb-unit-6 border-b border-outline-variant last:border-b-0">
+<div class="aspect-video bg-surface-container rounded-lg mb-unit-4 overflow-hidden group">
+<img alt="Organic Tomato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNpyrY_DB47Dhvb7kYT-_zRmZ-YoSk_3U2k5Uelq5I99jLxAvwJLh4wHRyv0GJrBtOCijkum3DwlnLqccWLp4BXwpSHk6HPzOIqk_TmcjyPUIvmLvDHzxGvqaVV9L31owDvx9uX7IYN5eP9o0mOShVR2UMOwlAgGyZm3ihTWaftRYHyfa0gisO4VBCUIb_bvaQDZAQNcTW44kAzTSuEIEVeIpG6vS73j-f7l83aGV-3HmelQDDV3cpvI7IFnCaVwco-ZI_2MyUP7Vl"/>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-on-surface mb-1">Organic Tomato</h3>
+<p class="text-caption font-caption text-on-surface-variant mb-unit-4">500g Fresh Harvest</p>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-primary font-bold">₹45</span>
+<button class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all" data-name="Organic Tomato" data-price="45" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCNpyrY_DB47Dhvb7kYT-_zRmZ-YoSk_3U2k5Uelq5I99jLxAvwJLh4wHRyv0GJrBtOCijkum3DwlnLqccWLp4BXwpSHk6HPzOIqk_TmcjyPUIvmLvDHzxGvqaVV9L31owDvx9uX7IYN5eP9o0mOShVR2UMOwlAgGyZm3ihTWaftRYHyfa0gisO4VBCUIb_bvaQDZAQNcTW44kAzTSuEIEVeIpG6vS73j-f7l83aGV-3HmelQDDV3cpvI7IFnCaVwco-ZI_2MyUP7Vl">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+
+<!-- Product Card 2: Fresh Carrot -->
+<div class="mb-unit-6 pb-unit-6 border-b border-outline-variant last:border-b-0">
+<div class="aspect-video bg-surface-container rounded-lg mb-unit-4 overflow-hidden group">
+<img alt="Fresh Carrot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUFzR-fM8qpdGNXSlEdpD1fkkw4BbMhgQZ3NjCrCPsipeR_szpxrJtBzv8RBuQeOdfRwPAcChLkBnY-uQ_ixcj9EiauINx4P7mMaQxocDd5mpaoQsghxM_6dBq63patxEBHtQz53y3D_Erl5AL_2q1vHleSHYI3IjNqO74sIR6ppfH23AhK2NeZTHkazOQxeVlaM592yGCKWUwXP7mV0l-q_QGOin9HZAMb_dPQy06cgGU6KejgprXt7tXnDb14WXLYaQnfR-kg9_R"/>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-on-surface mb-1">Fresh Carrot</h3>
+<p class="text-caption font-caption text-on-surface-variant mb-unit-4">500g Bundle</p>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-primary font-bold">₹35</span>
+<button class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all" data-name="Fresh Carrot" data-price="35" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCUFzR-fM8qpdGNXSlEdpD1fkkw4BbMhgQZ3NjCrCPsipeR_szpxrJtBzv8RBuQeOdfRwPAcChLkBnY-uQ_ixcj9EiauINx4P7mMaQxocDd5mpaoQsghxM_6dBq63patxEBHtQz53y3D_Erl5AL_2q1vHleSHYI3IjNqO74sIR6ppfH23AhK2NeZTHkazOQxeVlaM592yGCKWUwXP7mV0l-q_QGOin9HZAMb_dPQy06cgGU6KejgprXt7tXnDb14WXLYaQnfR-kg9_R">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+
+<!-- Product Card 3: Organic Spinach -->
+<div class="mb-unit-6 pb-unit-6 border-b border-outline-variant last:border-b-0">
+<div class="aspect-video bg-surface-container rounded-lg mb-unit-4 overflow-hidden group">
+<img alt="Organic Spinach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtkHVXXAzlmEcRtC-6Afv4f5aFzcAdOx14MptFXQcc-HFuyusuwiw2s-8Xea4mhEGceSyu4cBaXkGo-NsQIeVzUDMpHSPZaAV4fvam9G9Ro-mE0hp43EbiEB5oGZYvaBX4iAZ68kz1IVXY7YVvHx6qYfCzH7votQCIuDGZMHcd6L2RxEIqUAZ0m6YtYVFSzuD4luIpsDhM87d0WexlJTyCsnCXBDAMk11LQyFXuFHK1R-49thI03Ms2DacH1HpwfZ6NoaCNfk0LP_B"/>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-on-surface mb-1">Organic Spinach</h3>
+<p class="text-caption font-caption text-on-surface-variant mb-unit-4">250g Fresh Leaves</p>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-primary font-bold">₹28</span>
+<button class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all" data-name="Organic Spinach" data-price="28" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBtkHVXXAzlmEcRtC-6Afv4f5aFzcAdOx14MptFXQcc-HFuyusuwiw2s-8Xea4mhEGceSyu4cBaXkGo-NsQIeVzUDMpHSPZaAV4fvam9G9Ro-mE0hp43EbiEB5oGZYvaBX4iAZ68kz1IVXY7YVvHx6qYfCzH7votQCIuDGZMHcd6L2RxEIqUAZ0m6YtYVFSzuD4luIpsDhM87d0WexlJTyCsnCXBDAMk11LQyFXuFHK1R-49thI03Ms2DacH1HpwfZ6NoaCNfk0LP_B">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+
+<!-- Product Card 4: Fresh Bell Pepper -->
+<div class="mb-unit-6 pb-unit-6 border-b border-outline-variant last:border-b-0">
+<div class="aspect-video bg-surface-container rounded-lg mb-unit-4 overflow-hidden group">
+<img alt="Fresh Bell Pepper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvabVAoIDnPL6eiTd-PcEde4u3VyPiY6yWsWPmrBMDY9xzLhzWwRrdNk_Gx4NXLf3tLzzxWt50YNVoAZeoyh08fQP9JyByAP2r-idgdbe1R87vanWb6Y1W4Mqm7pZWGHOgftQlSH-B0Fx1wjG0aP88xHYjQriLcx7O-89H3xGuexD9J53WEDyxA0MzK_9P7bCMovTPgxXd0MzP-QKu3aJdzXh0NOVbK2E2U_8vxzqFwrcQrIJxojcuQGG7zKiy5csIEjAlHw5TsgpP"/>
+</div>
+<h3 class="text-label-md font-label-md font-bold text-on-surface mb-1">Fresh Bell Pepper</h3>
+<p class="text-caption font-caption text-on-surface-variant mb-unit-4">500g Assorted</p>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-primary font-bold">₹120</span>
+<button class="add-cart-btn bg-secondary-container text-primary p-2 rounded-lg hover:bg-primary hover:text-on-primary transition-all" data-name="Fresh Bell Pepper" data-price="120" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAvabVAoIDnPL6eiTd-PcEde4u3VyPiY6yWsWPmrBMDY9xzLhzWwRrdNk_Gx4NXLf3tLzzxWt50YNVoAZeoyh08fQP9JyByAP2r-idgdbe1R87vanWb6Y1W4Mqm7pZWGHOgftQlSH-B0Fx1wjG0aP88xHYjQriLcx7O-89H3xGuexD9J53WEDyxA0MzK_9P7bCMovTPgxXd0MzP-QKu3aJdzXh0NOVbK2E2U_8vxzqFwrcQrIJxojcuQGG7zKiy5csIEjAlHw5TsgpP">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+
+<!-- View All Products Button -->
+<a href="Products.html" class="block text-center bg-primary text-on-primary px-unit-6 py-unit-2 rounded-lg font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors mt-unit-4">
+View All Products
+</a>
+</div>
+</aside>
+</div>
+<!-- Community Highlights -->
+<section class="bg-surface-container-low py-unit-12">
+<div class="max-w-container-max mx-auto px-unit-6 md:px-unit-8">
+<div class="flex flex-col md:flex-row justify-between items-end gap-unit-6 mb-unit-8">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-primary mb-2">Grower Spotlights</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Exceptional stories from our green community members.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="bg-surface-container-lowest p-unit-6 rounded-2xl flex gap-unit-6 items-center border border-outline-variant">
+<div class="w-24 h-24 rounded-full flex-shrink-0 bg-cover bg-center" data-alt="A portrait of a smiling young woman wearing a straw hat and denim overalls, standing in a sun-drenched vegetable garden with tall sunflowers in the background. The lighting is warm and golden, evoking a morning harvest at a peaceful farm. The style is bright and airy with natural green and yellow tones." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDEjgQimcGhtG4cgqkZWMDxzPr4rtmSaQbWVz__Mnngym9xnn2iebYxOMAfA1ITbqV4HWmRz-uQigL1mJ07OoIQGjIf380Jsht19hoycw4zI4YKGH2xgk1bClXpHD1rud5wOa5GkNWLr6i7vKq-RiW0zHIwkT1bBlOPTMoOHlqwaxoFyMi72x9TsxzAt8S2DUBuR-Si95g971PhRQhnlyOl_SgXcc7Bgq9f7RwKDKiOaoRensfT7KTNCQ')"></div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-1">Meet Chef Maria</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">"I source 80% of my herbs directly from my balcony garden. The difference in flavor is undeniable."</p>
+<a class="text-primary font-bold text-label-md hover:underline" href="#">Follow Journey</a>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-unit-6 rounded-2xl flex gap-unit-6 items-center border border-outline-variant">
+<div class="w-24 h-24 rounded-full flex-shrink-0 bg-cover bg-center" data-alt="A portrait of an elderly man with kind eyes and weathered hands, wearing a plaid shirt. He is holding a large wicker basket filled with a variety of heirloom tomatoes in red, yellow, and purple hues. The background is a soft-focus lush green greenhouse. The mood is nostalgic, authentic, and celebrates traditional organic farming." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXvjRZiseSueJ93hM982iajTU7PPEMif6jkMwCLR_GTl5awt0AepQkORRWnFpS70D4k39gZPQ6ro4hg776nknJwvNAFwbZqOHZUAtTWd5eQKyvkD77kQsF61QiHSZp6NXeo9UE_IQ_DSfeZ5DcASWc4Mtckiu3YiUczjtV2GKBwHXxn6iiIgVmikhmFDqVDtGwAKUjTo3W7yaoxKMsgdd-ZN_HM5NBEK_oV42WpSqAwiDRTefJpf1Qwg')"></div>
+<div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-1">Tom's Tomato Patch</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">"Saving seeds for 20 years. Each plant tells a story of patience and organic perseverance."</p>
+<a class="text-primary font-bold text-label-md hover:underline" href="#">Follow Journey</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-unit-6 py-unit-8 max-w-container-max mx-auto">
+<div class="mb-unit-4 md:mb-0">
+<span class="text-headline-md font-headline-md font-bold text-primary">GreenMarket</span>
+<p class="text-caption font-caption text-on-surface-variant mt-1">© 2024 GreenMarket. Cultivating Vitality.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-unit-6">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-primary underline transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-body-md text-body

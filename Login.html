@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Fresh Vegetables</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container": "#edeeef",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#95d4b3",
+                        "on-secondary-fixed-variant": "#354c3b",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#cee9d3",
+                        "on-background": "#191c1d",
+                        "outline": "#707973",
+                        "background": "#f8f9fa",
+                        "tertiary-fixed-dim": "#f9b98d",
+                        "surface-container-high": "#e7e8e9",
+                        "on-secondary-fixed": "#092012",
+                        "surface-dim": "#d9dadb",
+                        "on-surface": "#191c1d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#002114",
+                        "on-secondary-container": "#506856",
+                        "tertiary": "#693d1b",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#2c694e",
+                        "secondary": "#4c6452",
+                        "on-surface-variant": "#404943",
+                        "tertiary-container": "#855430",
+                        "primary-container": "#2d6a4f",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#ffd1b3",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#301400",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "primary-fixed-dim": "#95d4b3",
+                        "tertiary-fixed": "#ffdcc6",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-container": "#a8e7c5",
+                        "on-tertiary-fixed-variant": "#683c1a",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bfc9c1",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-fixed-dim": "#b3cdb7",
+                        "secondary-container": "#cce6d0",
+                        "primary-fixed": "#b1f0ce",
+                        "primary": "#0f5238",
+                        "surface-variant": "#e1e3e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit-12": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit-1": "4px",
+                        "unit-6": "24px",
+                        "unit-8": "32px",
+                        "unit-4": "16px",
+                        "unit-2": "8px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Be Vietnam Pro"],
+                        "caption": ["Be Vietnam Pro"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .organic-shadow {
+            box-shadow: 0px 10px 30px rgba(45, 106, 79, 0.08);
+        }
+        .soft-ghost-border {
+            border: 1px solid #F1F3F5;
+        }
+        .form-input-focus:focus {
+            outline: none;
+            border-color: #2D6A4F;
+            box-shadow: 0 0 0 2px rgba(45, 106, 79, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<main class="min-h-screen flex items-stretch overflow-hidden">
+<!-- Left Column: Image Section -->
+<div class="hidden lg:flex lg:w-1/2 relative bg-primary-container items-center justify-center p-unit-12">
+<!-- Background Image with data-alt for generation -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] hover:scale-110" data-alt="A lush, high-resolution overhead shot of dew-covered dark green kale leaves and crisp spinach. The lighting is soft morning natural light, creating a fresh farmers market atmosphere. The color palette is dominated by deep vibrant forest greens and bright emerald tones. The composition is artistic and organic, emphasizing the natural textures and vitality of the vegetables, aligning with a high-end health-conscious brand aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLYzpvR_XGNayNhs-zs8ZspeRoa_s9RVF76MDmMXwOZ1cxkf9hgan7oGcUwu5Dr7cq7_Y29rSoDR4hk7lcU2DE7juor-2XO6uXUa5ife2GYXc-MsGzEyGl1Btpw8V2zo82EgLFMy14YmY79nqz7wIXCnAX73x7RNCRp8iWKyvmTa6mvzQlrDztZOTeZWw_mXfvVQlKyzsiNh_IXilScqPartNWv_DdQycKx6po_BiO9oCI1ApSySQ5P2o3t9yr96I78vT_E8iB7IaI')">
+</div>
+<!-- Overlay for readability/branding -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent"></div>
+</div>
+<!-- Floating Content over Image -->
+<div class="relative z-10 text-center max-w-md">
+<div class="mb-unit-6 inline-flex items-center justify-center p-unit-4 bg-white/10 backdrop-blur-md rounded-xl border border-white/20">
+<span class="material-symbols-outlined text-white text-[48px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-white mb-unit-4 leading-tight">Freshness from our farm to your table.</h2>
+<p class="font-body-lg text-body-lg text-white/90">Experience the vitality of seasonal produce delivered with care and clarity.</p>
+</div>
+<!-- Organic Badge -->
+<div class="absolute top-unit-8 left-unit-8 z-20">
+<div class="flex items-center gap-unit-2 bg-[#FFB703] px-unit-4 py-unit-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined text-[16px] text-[#582F0E]">verified</span>
+<span class="font-label-md text-label-md text-[#582F0E]">100% Organic Certified</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Login Form -->
+<div class="w-full lg:w-1/2 flex flex-col justify-center items-center p-unit-6 md:p-unit-12 bg-surface">
+<!-- Mobile Logo (Visible only on mobile/tablet) -->
+<div class="lg:hidden mb-unit-8 flex items-center gap-unit-2">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">Fresh Vegetables</span>
+</div>
+<div class="w-full max-w-[440px]">
+<!-- Header -->
+<header class="mb-unit-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-unit-2">Welcome Back</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Log in to your account to continue shopping for fresh produce.</p>
+</header>
+<!-- Login Form -->
+<form action="#" class="space-y-unit-6" method="POST">
+<!-- Email Address -->
+<div class="space-y-unit-2">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="email">Email Address</label>
+<div class="relative group">
+<span class="absolute left-unit-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-[20px] transition-colors group-focus-within:text-primary">mail</span>
+<input class="w-full pl-unit-12 pr-unit-4 py-unit-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline-variant form-input-focus transition-all" id="email" name="email" placeholder="name@example.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-unit-2">
+<div class="flex justify-between items-center">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="password">Password</label>
+<a class="font-label-md text-label-md text-primary hover:underline transition-all" href="#">Forgot password?</a>
+</div>
+<div class="relative group">
+<span class="absolute left-unit-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-[20px] transition-colors group-focus-within:text-primary">lock</span>
+<input class="w-full pl-unit-12 pr-unit-12 py-unit-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline-variant form-input-focus transition-all" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-unit-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline hover:text-on-surface-variant transition-colors text-[20px]" id="togglePassword" type="button">
+                                visibility
+                            </button>
+</div>
+</div>
+<!-- Remember Me (Bonus for UX) -->
+<div class="flex items-center">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary transition-all" id="remember" type="checkbox"/>
+<label class="ml-unit-2 font-body-md text-body-md text-on-surface-variant cursor-pointer" for="remember">Remember me for 30 days</label>
+</div>
+<!-- Primary Action: Login -->
+<button class="w-full py-unit-4 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg organic-shadow hover:bg-primary transition-all active:scale-[0.98] flex items-center justify-center gap-unit-2" type="submit">
+                        Login
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="my-unit-8 flex items-center gap-unit-4 text-outline-variant">
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+<span class="font-caption text-caption uppercase tracking-wider">or continue with</span>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<!-- Social Logins (Bento Card Style) -->
+<div class="grid grid-cols-2 gap-unit-4 mb-unit-8">
+<button class="flex items-center justify-center gap-unit-2 py-unit-3 px-unit-4 bg-surface-container-lowest soft-ghost-border rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                        Google
+                    </button>
+<button class="flex items-center justify-center gap-unit-2 py-unit-3 px-unit-4 bg-surface-container-lowest soft-ghost-border rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"></path>
+</svg>
+                        Facebook
+                    </button>
+</div>
+<!-- Secondary Action -->
+<p class="text-center font-body-md text-body-md text-on-surface-variant">
+                    Don't have an account? 
+                    <a class="font-label-md text-label-md text-primary hover:underline transition-all" href="./Registration.html">Sign Up</a>
+</p>
+</div>
+<!-- Footer Links (Subtle) -->
+<footer class="mt-unit-12 pt-unit-8 border-t border-outline-variant/20 w-full max-w-[440px]">
+<div class="flex flex-wrap justify-center gap-unit-4 font-caption text-caption text-outline">
+<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-surface transition-colors" href="#">Shipping Info</a>
+</div>
+<p class="text-center font-caption text-caption text-outline/60 mt-unit-4">
+                    © 2024 Fresh Vegetables. Farm-to-Table Clarity.
+                </p>
+</footer>
+</div>
+</main>
+<script>
+        // Password Visibility Toggle Interaction
+        const togglePassword = document.querySelector('#togglePassword');
+        const passwordInput = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? 'visibility' : 'visibility_off';
+        });
+
+        // Form Submit Micro-interaction and redirect to home page
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = `<span class="material-symbols-outlined animate-spin">progress_activity</span> Logging in...`;
+            btn.classList.add('opacity-80', 'pointer-events-none');
+            
+            setTimeout(() => {
+                btn.innerHTML = `<span class="material-symbols-outlined">check_circle</span> Success`;
+                btn.classList.replace('bg-primary-container', 'bg-secondary');
+                setTimeout(() => {
+                    window.location.href = './Home.html';
+                }, 600);
+            }, 1000);
+        });
+
+        // Background Parallax Effect
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            const bg = document.querySelector('[data-alt*="kale"]');
+            if(bg) {
+                bg.style.transform = `scale(1.1) translate(${moveX}px, ${moveY}px)`;
+            }
+        });
+    </script>
+</body></html>

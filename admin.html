@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin | Fresh Vegetables</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: { primary: '#0f5238', 'primary-container': '#2d6a4f', surface: '#f8f9fa', 'surface-container': '#edeeef', 'on-surface-variant': '#404943' },
+					fontFamily: { body: ['Be Vietnam Pro'], heading: ['Plus Jakarta Sans'] }
+				}
+			}
+		};
+	</script>
+	<style>
+		.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+		body { background: #f8f9fa; }
+		.admin-shadow { box-shadow: 0 14px 35px rgba(45, 106, 79, .09); }
+	</style>
+</head>
+<body class="text-[#191c1d] font-body">
+	<header class="sticky top-0 z-10 bg-white border-b border-[#e1e3e4]">
+		<nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+			<a href="Products.html" class="font-heading text-2xl font-bold text-primary">Fresh Vegetables <span class="text-sm font-body font-medium text-on-surface-variant">/ Admin</span></a>
+			<a href="Products.html" class="inline-flex items-center gap-2 text-primary font-semibold hover:text-primary-container"><span class="material-symbols-outlined">storefront</span>View store</a>
+		</nav>
+	</header>
+
+	<main class="max-w-7xl mx-auto px-6 py-10">
+		<div class="mb-8">
+			<p class="text-primary font-semibold uppercase tracking-[.16em] text-xs">Catalog control</p>
+			<h1 class="font-heading text-4xl font-bold mt-2">Manage products</h1>
+			<p class="text-on-surface-variant mt-2">Add new vegetables, keep pricing current, and find products instantly.</p>
+		</div>
+
+		<section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+			<div class="bg-white rounded-xl p-5 admin-shadow"><p class="text-on-surface-variant text-sm">Managed products</p><p id="productCount" class="text-3xl font-heading font-bold text-primary mt-2">0</p></div>
+			<div class="bg-white rounded-xl p-5 admin-shadow"><p class="text-on-surface-variant text-sm">Average price</p><p id="averagePrice" class="text-3xl font-heading font-bold text-primary mt-2">₹0</p></div>
+			<div class="bg-white rounded-xl p-5 admin-shadow"><p class="text-on-surface-variant text-sm">Last catalog action</p><p id="lastAction" class="text-lg font-semibold mt-3">Ready</p></div>
+		</section>
+
+		<section class="bg-white rounded-xl p-6 md:p-8 admin-shadow mb-8">
+			<div class="flex items-center justify-between gap-4 mb-6">
+				<div><h2 id="formTitle" class="font-heading text-2xl font-bold">Add new product</h2><p class="text-sm text-on-surface-variant mt-1">Products are saved in this browser and shown in the store.</p></div>
+				<span class="material-symbols-outlined text-primary text-3xl">inventory_2</span>
+			</div>
+			<form id="productForm" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+				<input type="hidden" id="productId">
+				<label class="font-semibold">Product name<input id="productName" required maxlength="60" class="mt-2 w-full rounded-lg border-[#bfc9c1]" placeholder="e.g. Baby Corn"></label>
+				<label class="font-semibold">Category<select id="productCategory" class="mt-2 w-full rounded-lg border-[#bfc9c1]"><option>Leafy Greens</option><option>Root Veggies</option><option>Fruit Vegetables</option><option>Other</option></select></label>
+				<label class="font-semibold">Price (₹)<input id="productPrice" required min="1" step="0.01" type="number" class="mt-2 w-full rounded-lg border-[#bfc9c1]" placeholder="60"></label>
+				<label class="font-semibold">Pack size<input id="productSize" required maxlength="30" class="mt-2 w-full rounded-lg border-[#bfc9c1]" placeholder="500g"></label>
+				<label class="font-semibold md:col-span-2">Image URL<input id="productImage" type="url" class="mt-2 w-full rounded-lg border-[#bfc9c1]" placeholder="https://example.com/vegetable.jpg"><span class="block text-xs text-on-surface-variant mt-1">Optional. A clean placeholder is used when empty.</span></label>
+				<div class="md:col-span-2 flex flex-wrap gap-3 pt-2"><button class="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-primary-container" type="submit"><span id="submitIcon" class="material-symbols-outlined">add</span><span id="submitLabel">Add product</span></button><button id="cancelEdit" class="hidden px-5 py-3 rounded-lg border border-[#bfc9c1] font-semibold" type="button">Cancel edit</button></div>
+			</form>
+			<p id="formMessage" class="hidden mt-4 rounded-lg px-4 py-3 text-sm"></p>
+		</section>
+
+		<section class="bg-white rounded-xl p-6 md:p-8 admin-shadow">
+			<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"><div><h2 class="font-heading text-2xl font-bold">Product inventory</h2><p class="text-sm text-on-surface-variant mt-1">Search and update your managed catalog.</p></div><label class="relative w-full sm:w-80"><span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant">search</span><input id="adminSearch" class="w-full pl-11 rounded-lg border-[#bfc9c1]" placeholder="Search products..." type="search"></label></div>
+			<div id="productList" class="divide-y divide-[#e7e8e9]"></div>
+			<p id="emptyState" class="hidden text-center py-10 text-on-surface-variant">No products match your search.</p>
+		</section>
+	</main>
+
+	<script>
+		const storageKey = 'freshVegetableProducts';
+		const form = document.getElementById('productForm');
+		const fields = { id: document.getElementById('productId'), name: document.getElementById('productName'), category: document.getElementById('productCategory'), price: document.getElementById('productPrice'), size: document.getElementById('productSize'), image: document.getElementById('productImage') };
+		const placeholder = 'https://images.unsplash.com/photo-1597362925123-77861d3fbac7?w=800&q=80';
+		let products = readProducts();
+
+		function readProducts() { try { return JSON.parse(localStorage.getItem(storageKey)) || []; } catch (error) { return []; } }
+		function saveProducts() { localStorage.setItem(storageKey, JSON.stringify(products)); }
+		function showMessage(text, error = false) { const message = document.getElementById('formMessage'); message.textContent = text; message.className = `mt-4 rounded-lg px-4 py-3 text-sm ${error ? 'bg-red-50 text-red-700' : 'bg-green-50 text-green-700'}`; }
+		function render() {
+			const query = document.getElementById('adminSearch').value.trim().toLowerCase();
+			const visible = products.filter(product => `${product.name} ${product.category} ${product.size}`.toLowerCase().includes(query));
+			document.getElementById('productList').innerHTML = visible.map(product => `<article class="py-4 flex flex-col sm:flex-row sm:items-center gap-4"><img src="${product.image}" alt="${product.name}" class="w-16 h-16 rounded-lg object-cover bg-surface-container"><div class="flex-1"><h3 class="font-bold">${product.name}</h3><p class="text-sm text-on-surface-variant">${product.category} · ${product.size} · ₹${Number(product.price).toFixed(2)}</p></div><div class="flex gap-2"><button data-edit="${product.id}" class="inline-flex items-center gap-1 border border-[#bfc9c1] px-3 py-2 rounded-lg font-semibold text-primary"><span class="material-symbols-outlined text-lg">edit</span>Edit</button><button data-delete="${product.id}" class="inline-flex items-center gap-1 border border-red-200 px-3 py-2 rounded-lg font-semibold text-red-700"><span class="material-symbols-outlined text-lg">delete</span>Delete</button></div></article>`).join('');
+			document.getElementById('emptyState').classList.toggle('hidden', visible.length > 0);
+			document.getElementById('productCount').textContent = products.length;
+			const average = products.length ? products.reduce((sum, product) => sum + Number(product.price), 0) / products.length : 0;
+			document.getElementById('averagePrice').textContent = `₹${average.toFixed(2)}`;
+		}
+		function resetForm() { form.reset(); fields.id.value = ''; document.getElementById('formTitle').textContent = 'Add new product'; document.getElementById('submitLabel').textContent = 'Add product'; document.getElementById('submitIcon').textContent = 'add'; document.getElementById('cancelEdit').classList.add('hidden'); }
+		form.addEventListener('submit', event => { event.preventDefault(); const product = { id: fields.id.value || `product-${Date.now()}`, name: fields.name.value.trim(), category: fields.category.value, price: Number(fields.price.value), size: fields.size.value.trim(), image: fields.image.value.trim() || placeholder }; if (!product.name || product.price <= 0 || !product.size) { showMessage('Enter a name, pack size, and a price greater than zero.', true); return; } const editing = Boolean(fields.id.value); products = editing ? products.map(item => item.id === product.id ? product : item) : [...products, product]; saveProducts(); render(); document.getElementById('lastAction').textContent = editing ? `Updated ${product.name}` : `Added ${product.name}`; showMessage(editing ? 'Product updated successfully.' : 'Product added successfully.'); resetForm(); });
+		document.getElementById('adminSearch').addEventListener('input', render);
+		document.getElementById('cancelEdit').addEventListener('click', resetForm);
+		document.getElementById('productList').addEventListener('click', event => { const editId = event.target.closest('[data-edit]')?.dataset.edit; const deleteId = event.target.closest('[data-delete]')?.dataset.delete; if (editId) { const product = products.find(item => item.id === editId); Object.keys(fields).forEach(key => fields[key].value = product[key] || ''); document.getElementById('formTitle').textContent = 'Update product'; document.getElementById('submitLabel').textContent = 'Save changes'; document.getElementById('submitIcon').textContent = 'save'; document.getElementById('cancelEdit').classList.remove('hidden'); window.scrollTo({ top: 0, behavior: 'smooth' }); } if (deleteId) { const product = products.find(item => item.id === deleteId); if (confirm(`Delete ${product.name}?`)) { products = products.filter(item => item.id !== deleteId); saveProducts(); render(); document.getElementById('lastAction').textContent = `Deleted ${product.name}`; } } });
+		render();
+	</script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contact Us - Fresh Vegetables</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#cee9d3",
+                        "secondary-container": "#cce6d0",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#707973",
+                        "primary-fixed": "#b1f0ce",
+                        "on-secondary-container": "#506856",
+                        "on-primary-fixed": "#002114",
+                        "tertiary-fixed": "#ffdcc6",
+                        "inverse-surface": "#2e3132",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#edeeef",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-fixed-dim": "#b3cdb7",
+                        "tertiary-container": "#855430",
+                        "on-secondary-fixed-variant": "#354c3b",
+                        "primary-fixed-dim": "#95d4b3",
+                        "outline-variant": "#bfc9c1",
+                        "primary": "#0f5238",
+                        "tertiary": "#693d1b",
+                        "background": "#f8f9fa",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#4c6452",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#2d6a4f",
+                        "on-secondary-fixed": "#092012",
+                        "on-primary-fixed-variant": "#0e5138",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-tint": "#2c694e",
+                        "surface-bright": "#f8f9fa",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#95d4b3",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#683c1a",
+                        "surface": "#f8f9fa",
+                        "on-surface-variant": "#404943",
+                        "on-tertiary-container": "#ffd1b3",
+                        "on-primary-container": "#a8e7c5",
+                        "tertiary-fixed-dim": "#f9b98d",
+                        "on-surface": "#191c1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "unit-4": "16px",
+                        "unit-12": "48px",
+                        "unit-1": "4px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "unit-8": "32px",
+                        "unit-6": "24px",
+                        "unit-2": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Be Vietnam Pro"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "caption": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .soft-ambient-shadow {
+            box-shadow: 0px 10px 30px rgba(45, 106, 79, 0.08);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <header class="w-full top-0 sticky bg-surface shadow-sm z-50">
+        <nav class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-20">
+            <div class="flex items-center gap-unit-2">
+                <span class="font-headline-md text-headline-md font-bold text-primary">Fresh Vegetables</span>
+            </div>
+            <!-- Navigation Links (Desktop) -->
+            <div class="hidden md:flex items-center gap-unit-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                    href="./Home.html">Home</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                    href="./Products.html">Products</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                    href="./green.html">Green</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md"
+                    href="./About.html">About</a>
+                <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md"
+                    href="./Contact.html">Contact</a>
+            </div>
+            <!-- Trailing Actions -->
+            <div class="flex items-center gap-unit-4">
+                <button
+                    class="flex items-center gap-unit-2 text-on-surface-variant hover:text-primary transition-all duration-200 active:opacity-80">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    <span class="hidden sm:inline font-label-md text-label-md">Cart</span>
+                </button>
+                <button
+                    class="bg-primary text-on-primary px-unit-6 py-unit-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all duration-200 active:opacity-80">
+                    
+                <a href="./Login.html">Login</a></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-unit-12 px-gutter overflow-hidden">
+            <div class="max-w-container-max mx-auto text-center relative z-10">
+                <h1 class="font-display-lg text-display-lg text-primary mb-unit-4">Get in Touch</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Whether you have questions about our seasonal harvests, delivery schedules, or our organic farming
+                    practices, we're here to help you cultivate a healthier lifestyle.
+                </p>
+            </div>
+            <!-- Decorative atmospheric background element -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl -z-1"></div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-secondary-fixed/30 rounded-full blur-3xl -z-1"></div>
+        </section>
+        <!-- Main Content Bento Grid -->
+        <section class="px-gutter pb-unit-12">
+            <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-unit-6">
+                <!-- Contact Form Section (Bento Large) -->
+                <div
+                    class="md:col-span-7 bg-surface-container-lowest rounded-xl border border-outline-variant p-unit-8 soft-ambient-shadow">
+                    <h2 class="font-headline-md text-headline-md text-on-surface mb-unit-6">Send us a Message</h2>
+                    <form class="space-y-unit-6" id="contactForm">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-unit-4">
+                            <div class="space-y-unit-2">
+                                <label class="font-label-md text-label-md text-on-surface-variant" for="name">Full
+                                    Name</label>
+                                <input
+                                    class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-unit-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                    id="name" placeholder="Enter name" type="text" />
+                            </div>
+                            <div class="space-y-unit-2">
+                                <label class="font-label-md text-label-md text-on-surface-variant" for="email">Email
+                                    Address</label>
+                                <input
+                                    class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-unit-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                                    id="email" placeholder="Enter email" type="email" />
+                            </div>
+                        </div>
+                        <div class="space-y-unit-2">
+                            <label class="font-label-md text-label-md text-on-surface-variant"
+                                for="subject">Subject</label>
+                            <select
+                                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-unit-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all appearance-none"
+                                id="subject">
+                                <option>General Inquiry</option>
+                                <option>Order Support</option>
+                                <option>Wholesale Partnerships</option>
+                                <option>Farm Visit Request</option>
+                            </select>
+                        </div>
+                        <div class="space-y-unit-2">
+                            <label class="font-label-md text-label-md text-on-surface-variant" for="message">Your
+                                Message</label>
+                            <textarea
+                                class="w-full bg-surface-container-low border border-outline-variant rounded-lg px-unit-4 py-3 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+                                id="message" placeholder="How can we help you today?" rows="5"></textarea>
+                        </div>
+                        <button
+                            class="w-full sm:w-auto bg-primary text-on-primary px-unit-12 py-unit-4 rounded-lg font-headline-md text-headline-md font-bold hover:bg-primary-container transition-all duration-300 transform hover:-translate-y-1 active:scale-95 shadow-md"
+                            type="submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <!-- Info Cards Section -->
+                <div class="md:col-span-5 space-y-unit-6">
+                    <!-- Contact Details Card -->
+                    <div class="bg-primary text-on-primary rounded-xl p-unit-8 soft-ambient-shadow">
+                        <h3 class="font-headline-md text-headline-md mb-unit-6">Our Information</h3>
+                        <div class="space-y-unit-6">
+                            <div class="flex items-start gap-unit-4">
+                                <div class="bg-on-primary/10 p-unit-2 rounded-lg">
+                                    <span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-label-md text-on-primary/70">Visit Our Farm Office</p>
+                                    <p class="font-body-md text-body-md">124 Harvest Lane, Greenway
+                                        Valley,<br />Odisha,  754245</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-unit-4">
+                                <div class="bg-on-primary/10 p-unit-2 rounded-lg">
+                                    <span class="material-symbols-outlined" data-icon="call">call</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-label-md text-on-primary/70">Phone Number</p>
+                                    <p class="font-body-md text-body-md">+91 9040327762</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-unit-4">
+                                <div class="bg-on-primary/10 p-unit-2 rounded-lg">
+                                    <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                                </div>
+                                <div>
+                                    <p class="font-label-md text-label-md text-on-primary/70">Email Us</p>
+                                    <p class="font-body-md text-body-md">ranjan@freshvegetables.farm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map/Visual Card -->
+                    <div class="group relative overflow-hidden rounded-xl h-64 soft-ambient-shadow">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="A lush, aerial view of a sustainable organic vegetable farm with vibrant green rows of crops, wooden outbuildings, and a modern glass greenhouse. The lighting is golden-hour soft, highlighting the dew on leaves and the rich dark soil of the Greenway Valley, Vermont setting. The aesthetic is crisp, professional, and evocative of fresh agricultural life."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf8YgNxVIXiRphmwNxImolRrqGdJ6rM5LmvuJgn6P7Lg1-jCBkMwc2DrGQKECJmmxLMf-UKRnJmLIjFC5h9xvgolJWdB02ybzxXgupBAWBE0uJTtikD332d2O8SANpEHQsdAf5oC3rnZapnUJ_nH6ls4VBKxtqzM2IYI9sl42LdS0RYzuKTOXTQqQKtQTqdMG305I8JlxDjExOlTLDwdoOmivm_pzJNoDV-1-2dZRN7ZD0GQb_VtQOh9q3K-fJJI90IzakjIjVqVXN" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-on-background/60 to-transparent flex flex-col justify-end p-unit-6">
+                            <p class="text-white font-headline-md text-headline-md font-bold">Nature's Best, Delivered.
+                            </p>
+                            <p class="text-white/80 font-body-md text-body-md">Supporting 50+ local families daily.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Interactive Map Section -->
+        <section class="px-gutter pb-unit-12">
+            <div
+                class="max-w-container-max mx-auto overflow-hidden rounded-xl border border-outline-variant soft-ambient-shadow">
+                <div class="bg-surface-container-high p-unit-4 flex items-center justify-between">
+                    <div class="flex items-center gap-unit-2">
+                        <span class="material-symbols-outlined text-primary" data-icon="map">map</span>
+                        <span class="font-label-md text-label-md">Farm Location Explorer</span>
+                    </div>
+                    <div class="flex gap-unit-2">
+                        <span
+                            class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full text-caption font-bold">Open
+                            for Visits: Sat-Sun</span>
+                    </div>
+                </div>
+                <div class="h-[450px] w-full relative grayscale hover:grayscale-0 transition-all duration-500">
+                    <!-- Integrated Map Element -->
+                    <img class="w-full h-full object-cover" data-location="Burlington, Vermont"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy2v2mJjmGMFdNvEgWjV8lc0Uhu2YLSll8gGTMDh-1laYUWNO9-caz9j6GwrScf8pj8VSLR2DSZamjFG0T6Ld8I09-ODQj2vSrcCkcBwytfPHgeykpHIl5DlIVtn55gMnLaPEdXVz5-g6ot8suan8delMF2RgdfkuISAYU_5n9Z9keu0yiY21H536wO8hJPw71z9DLumkOQgLvA7ITJ55V3DFEERM9K0M7aBKhhm1ycvhLnfkC2QgydKoVN6MpgUjZ85rOMFsAwNqE" />
+                    <!-- Interactive Overlay Pins -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-primary rounded-full animate-ping opacity-75"></div>
+                            <div class="relative bg-primary text-white p-3 rounded-full shadow-lg z-10">
+                                <span class="material-symbols-outlined" data-icon="agriculture">agriculture</span>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-48 opacity-0 group-hover:opacity-100 transition-opacity bg-white p-unit-4 rounded-lg shadow-xl border border-outline-variant pointer-events-none">
+                            <p class="font-bold text-primary">Main Distribution Hub</p>
+                            <p class="text-caption text-on-surface-variant">Where the freshness begins. Open daily for
+                                wholesale pickup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ CTA Section -->
+        <section class="bg-secondary-fixed/20 py-unit-12">
+            <div class="max-w-container-max mx-auto px-gutter text-center">
+                <h2 class="font-headline-lg text-headline-lg text-on-background mb-unit-4">Need a Quick Answer?</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-unit-8">Check out our frequently asked
+                    questions about delivery, packaging, and subscriptions.</p>
+                <div class="flex flex-wrap justify-center gap-unit-4">
+                    <a class="bg-surface border border-outline-variant text-primary font-bold px-unit-8 py-unit-3 rounded-lg hover:bg-primary-fixed transition-colors"
+                        href="#">Shipping Info</a>
+                    <a class="bg-surface border border-outline-variant text-primary font-bold px-unit-8 py-unit-3 rounded-lg hover:bg-primary-fixed transition-colors"
+                        href="#">Return Policy</a>
+                    <a class="bg-surface border border-outline-variant text-primary font-bold px-unit-8 py-unit-3 rounded-lg hover:bg-primary-fixed transition-colors"
+                        href="#">Wholesale FAQ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full mt-unit-12 bg-surface-container border-t border-outline-variant">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center py-unit-8 px-gutter max-w-container-max mx-auto gap-unit-6">
+            <div class="flex flex-col items-center md:items-start gap-unit-2">
+                <span class="font-headline-md text-headline-md font-bold text-primary">Fresh Vegetables</span>
+                <p class="font-caption text-caption text-on-surface-variant">© 2024 Fresh Vegetables. All rights
+                    reserved. Prices in ₹ (INR).</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-unit-6">
+                <a class="font-caption text-caption text-on-surface-variant hover:underline hover:text-primary transition-opacity duration-200"
+                    href="#">Privacy Policy</a>
+                <a class="font-caption text-caption text-on-surface-variant hover:underline hover:text-primary transition-opacity duration-200"
+                    href="#">Terms of Service</a>
+                <a class="font-caption text-caption text-on-surface-variant hover:underline hover:text-primary transition-opacity duration-200"
+                    href="#">Shipping Info</a>
+                <a class="font-caption text-caption text-on-surface-variant hover:underline hover:text-primary transition-opacity duration-200"
+                    href="#">FAQ</a>
+            </div>
+            <div class="flex gap-unit-4">
+                <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+                    <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+                    <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Form submission micro-interaction
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'Sending...';
+            btn.disabled = true;
+            setTimeout(function () {
+                btn.innerText = 'Message Sent!';
+                setTimeout(function () {
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
